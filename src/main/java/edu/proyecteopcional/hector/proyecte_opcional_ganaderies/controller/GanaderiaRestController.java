@@ -27,9 +27,17 @@ public class GanaderiaRestController {
 
     private final GanaderiaService ganaderiaService;
 
+    
+
     public GanaderiaRestController(GanaderiaService ganaderiaService) {
         this.ganaderiaService = ganaderiaService;
     }
+
+    @GetMapping("/list-ganaderias")
+    public String mostrarListaGanaderias() {
+        return "list-ganaderias";
+    }
+
 
     @GetMapping("/ganaderias")
     public PaginaDto<GanaderiaList> getAllGanaderia(Pageable pageable) {
